@@ -2,7 +2,9 @@
 sidebar: false
 ---
 
-# Processor
+# Real-Time Processor
+
+[返回上级](/inside/)
 
 vNerve Processor 在 vNerve 中负责接收和处理实时消息，由 Receptor（接受器）、CNS（中枢神经系统）和 Effector（效应器）构成，核心代码使用 C++ 编写。轻敲以选择您想要查看的内容。
 
