@@ -8,7 +8,10 @@ module.exports = {
     ],
     sidebar: {
       '/guide/': [''],
-      '/inside/': ['']
+      '/inside/processor/supervisor/': [''],
+      '/inside/processor/worker/': [''],
+      '/inside/processor/cns/': [''],
+      '/inside/processor/effector/': ['']
     },
     displayAllHeaders: true,
     lastUpdated: '最后更新',
