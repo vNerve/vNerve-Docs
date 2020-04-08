@@ -9,4 +9,4 @@ footer: MIT Licensed | Copyright © 2020 DD Center
 
 ## ⚠ WORKING IN PROGRESS ⚠
 
-This project is currently working in progress.
+项目仍在建设中。
