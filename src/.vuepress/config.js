@@ -8,7 +8,13 @@ module.exports = {
     ],
     sidebar: {
       '/guide/': [''],
-      '/inside/processor/supervisor/': [''],
+      '/inside/': ['', 'spider', 'processor'],
+      '/inside/processor/supervisor/': [
+        '',
+        'communication',
+        'income',
+        'load-balance'
+      ],
       '/inside/processor/worker/': [''],
       '/inside/processor/cns/': [''],
       '/inside/processor/effector/': ['']
