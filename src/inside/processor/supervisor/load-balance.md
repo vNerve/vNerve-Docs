@@ -70,13 +70,13 @@ Supervisor 在启动后即进入预热状态，等待 Worker 的连接但不分�
 Worker 接到「预先重置」的指令之后就要先结束所有的任务吗？不一定。Worker 可以在接收到「预先重置」的指令之后与传来的新的任务做差集，然后结束不再需要的任务。
 :::
 
-- 然后，Supervisor 遍历所有的 Worker，找出 `remove` 数组中指示的任务后将「结束任务」的指令添加到 提供给相关 Worker 的指令中，并从相关 Worker 的 `正在运行的任务数` 中减去相应的任务个数。
+- 然后，Supervisor 遍历所有的 Worker，找出 `remove` 数组中指示的任务后将「结束任务」的指令添加到提供给相关 Worker 的指令中，并从相关 Worker 的 `正在运行的任务数` 中减去相应的任务个数。
 
 - 然后，Supervisor 会获取所有 Worker 的状态，通过每个 Worker 的 `可新增任务数` 推算出每个 Worker 的权重。`可新增任务数` 由 `最大负载 - 正在运行的任务数` 计算得到。其中，`最大负载` 是由 Worker 提供的。
 
 - 接着，Supervisor 使用**总的任务数乘以连接数（参见 [通信](/inside/processor/supervisor/communication/)，一般为 2-3）再乘以权重后向上取整**，得出每个 Worker 需要增加的任务数。
 
-- 最后，Supervisor 为每个 Worker 从 `add` 数组中取出一定量的任务加入该 Worker 的「添加任务」的指令集中并发送所有的指令。
+- 最后，Supervisor 为每个 Worker 从 `add` 数组中取出一定量的任务加入该 Worker 的「添加任务」的指令集中并发送所有的指令。若 `add` 数组为空即结束分配。
 
 ### 4.完成
 
