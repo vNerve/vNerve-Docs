@@ -1,5 +1,5 @@
 <template>
-  <div class="sb-container">
+  <div class="sb-container" @click="push">
     <p class="sb-title">{{ title }}</p>
     <p class="sb-description">{{ description }}</p>
   </div>
@@ -15,6 +15,15 @@ export default {
     description: {
       type: String,
       required: false
+    },
+    href: {
+      type: String,
+      required: true
+    }
+  },
+  methods: {
+    push() {
+      this.$router.push(this.href)
     }
   }
 }
@@ -27,6 +36,7 @@ export default {
   border: 1.5px solid #3eaf7c;
   border-radius: 15px;
   transition: box-shadow 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .sb-container:hover {
@@ -37,11 +47,9 @@ export default {
   margin: 10px;
   font-size: 24px;
   font-weight: bold;
-  user-select: none;
 }
 
 .sb-description {
   margin: 8px 10px;
-  user-select: none;
 }
 </style>
