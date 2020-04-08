@@ -20,7 +20,7 @@ Supervisor 作为 Real-Time Processor 的中心节点，管理着所有的 Worke
 
 ### 连接状态
 
-在 [通信](/inside/processor/supervisor/communication/) 一节中我们已经提到过，Supervisor 和 Worker 之间传递的所有消息都是单向的，因此二者之间不会有任何的「握手」流程，因此我们也就没有任何办法显式地判断 Supervisor 和任何一个 Worker 是否处于连接状态。因此，下文中提到的任何「连接状态」实际上都是从 Worker 的 `isActive` 值获取的。更改这个值则是使用下面将要讲述的「低精度计时器」。
+在 [通信](/inside/processor/supervisor/communication/) 一节中我们已经提到过，Supervisor 和 Worker 之间传递的所有消息都是单向的，因此二者之间不会有任何的「握手」流程，因此我们也就没有任何办法显式地判断 Supervisor 和任何一个 Worker 是否处于连接状态。因此，下文中提到的任何「连接状态」实际上都是从 Worker 状态获取的。更改这个值则是使用下面将要讲述的「低精度计时器」。
 
 ### 低精度计时器
 
