@@ -4,11 +4,12 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '指南', link: '/guide/' },
-      { text: 'Inside', link: '/inside/' }
+      { text: 'Inside', link: '/inside/' },
+      { text: 'GitHub', link: '/github' }
     ],
     sidebar: {
       '/guide/': [''],
-      // '/inside/': ['', 'spider', 'processor'],
+      '/github': ['/github'],
       '/inside/processor/supervisor/': [
         '',
         'communication',
@@ -21,9 +22,7 @@ module.exports = {
     },
     displayAllHeaders: true,
     lastUpdated: '最后更新',
-    repo: 'dd-center/vNerveBiLiveReceptor',
-    repoLabel: 'GitHub',
-    docsRepo: 'dd-center/vNerve-Docs',
+    docsRepo: 'vNerve/vNerve-Docs',
     docsDir: 'src',
     editLinks: true,
     editLinkText: '在 GitHub 上编辑此页',
